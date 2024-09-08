@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pipePrefab: {fileID: 2319839878399636318, guid: 6df065cd160805a44b2709cfffbfa7f0, type: 3}
   Pipe_spawn: {fileID: 108741660}
-  wood_box: {fileID: 6028718198625975428, guid: 7b82d7970e126dd4983d1e7f30d8d8ee, type: 3}
+  wood_box: {fileID: 8444635380160471425, guid: b5b5bb6bf375474408d887d4059a9ee4, type: 3}
   ceiling: {fileID: 1885909169}
   floor: {fileID: 1479719022}
 --- !u!1 &204845356
@@ -991,7 +991,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: {fileID: -3010493108859838914, guid: b7437a0618b7e4d41920fdc7c09f5052, type: 3}
-  spawn: {fileID: 698561937}
+  spawn: {fileID: 698561936}
+  sound: {fileID: 8300000, guid: 287813aa116bcfe45b457ebaea4ecba7, type: 3}
 --- !u!1 &826363772
 GameObject:
   m_ObjectHideFlags: 0

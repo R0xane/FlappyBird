@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - set_pipes
   - endGame
+  - Ammo
   layers:
   - Default
   - TransparentFX
