@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ammo : MonoBehaviour
@@ -9,5 +10,10 @@ public class ammo : MonoBehaviour
     {
 
         Destroy(gameObject);
+    }
+
+    void Update(){
+        // Destroy the ammo after 2 seconds
+        Destroy(gameObject, 2);
     }
 }

@@ -9,4 +9,9 @@ public class Menu_play_quit : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void OnclickQuit()
+    {
+        Application.Quit();
+    }
 }

@@ -11,6 +11,8 @@ public class ControlBird : MonoBehaviour
     public GameObject pipe_Spawn;
     public End_game endGame;
 
+    public static bool isDead { get; set; }
+
     // Audio settings
     public AudioClip Sound_crash;  // This should be your collision sound
     public AudioClip flying;  // This should be your jump sound
@@ -18,9 +20,14 @@ public class ControlBird : MonoBehaviour
     private AudioSource fly_sound;
     public GameObject explosion;
 
+    public AudioClip point;
+    private AudioSource point_sound;
+    public GameObject advice;
+    
+
     void Start()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 0;
         _rigidbody_mid = GetComponent<Rigidbody2D>();
 
         // Get or add an AudioSource component
@@ -34,13 +41,26 @@ public class ControlBird : MonoBehaviour
         fly_sound = gameObject.AddComponent<AudioSource>();
         fly_sound.clip = flying;
 
+        point_sound = GetComponent<AudioSource>();
+        point_sound = gameObject.AddComponent<AudioSource>();
+        point_sound.clip = point;
+
+        advice.SetActive(true);
+
+        isDead = false;
+
     }
+
+
+
 
     void Update()
     {
         // Handle bird movement
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isDead == false)
         {
+            advice.SetActive(false);
+            Time.timeScale = 1;
             _rigidbody_mid.velocity = Vector2.up * _speed;
             _rigidbody_mid.AddForce(new Vector2(0f, 5f));
             fly_sound.Play();
@@ -69,8 +89,7 @@ public class ControlBird : MonoBehaviour
  
 
         // Instantiate the explosion at the bird's position
-
-
+        isDead = true;
         endGame.GameOver();
 
 
@@ -85,6 +104,7 @@ public class ControlBird : MonoBehaviour
         if (pipe_script.isScored == false && Mathf.Abs(pipe.transform.position.x - _rigidbody_mid.transform.position.x) < tolerance)
         {
             Debug.Log("Score + 1");
+            point_sound.Play();
             Point_calculator.score += 1;
             pipe_script.isScored = true;
         }

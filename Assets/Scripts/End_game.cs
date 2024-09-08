@@ -9,15 +9,14 @@ public class End_game : MonoBehaviour
     public Text BestScore;
     public GameObject gameover;
 
-    void Start()
-    {
 
-    }
+
 
     public void GameOver()
     {
         gameover.SetActive(true);
         BestScore.text = "Best Score: " + PlayerPrefs.GetInt("BestScore", Point_calculator.score);
+
 
     }
 

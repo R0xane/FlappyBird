@@ -15,23 +15,28 @@ public class ammo_pewpew : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = sound;
+
     }
 
     void Update()
     {
         // Vérifie si une des touches directionnelles est pressée
-        if (Input.GetKeyDown(KeyCode.UpArrow)) 
+        if (ControlBird.isDead == false)
         {
+        
+            if (Input.GetKeyDown(KeyCode.UpArrow)) 
+            {
 
-            Fire(Vector2.up, 0);  
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow)) 
-        {
-            Fire(Vector2.down, 180);  
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow)) 
-        {
-            Fire(Vector2.right, -90); 
+                Fire(Vector2.up, 0);  
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow)) 
+            {
+                Fire(Vector2.down, 180);  
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow)) 
+            {
+                Fire(Vector2.right, -90); 
+            }
         }
     }
 
