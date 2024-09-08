@@ -12,16 +12,6 @@ public class Wood_box : MonoBehaviour
     //The wood box has to be fired 3 times to be destroyed
     public int health = 3;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     //When the wood box is hit by the ammo, it loses health
     void OnCollisionEnter2D(Collision2D collision)

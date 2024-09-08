@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ammo_pewpew : MonoBehaviour
 {
-    public Rigidbody2D ammo;  // Le prefab du projectile
-    public GameObject spawn;  // Le point de spawn du projectile
-    private float speed = 50f;  // Vitesse du projectile
-    public AudioClip sound;  // This should be your collision sound
+    public Rigidbody2D ammo;  
+    public GameObject spawn;  
+    private float speed = 50f;  
+    public AudioClip sound; 
     private AudioSource audioSource; 
 
     void Start()

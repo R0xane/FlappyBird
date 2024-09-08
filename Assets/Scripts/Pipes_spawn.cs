@@ -6,15 +6,16 @@ using UnityEngine;
 
 public class Pipes_spawn : MonoBehaviour
 {
-    public GameObject pipePrefab;  // Le prefab de pipe à instancier
-    public GameObject Pipe_spawn;  // L'objet parent pour les pipes instanciées
+    public GameObject pipePrefab;  
+    public GameObject Pipe_spawn;  
     public GameObject wood_box;
 
     public GameObject ceiling;
     public GameObject floor;
-    private float minSpawnRate; // Délai minimum pour créer une pipe
-    private float maxSpawnRate; // Délai maximum pour créer une pipe
-    // Start is called before the first frame update
+    private float minSpawnRate; 
+    private float maxSpawnRate; 
+    
+    
     void Start()
     {
         // Démarrer la coroutine pour générer des pipes à intervalles aléatoires

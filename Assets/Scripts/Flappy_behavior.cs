@@ -14,9 +14,9 @@ public class ControlBird : MonoBehaviour
     public static bool isDead { get; set; }
 
     // Audio settings
-    public AudioClip Sound_crash;  // This should be your collision sound
-    public AudioClip flying;  // This should be your jump sound
-    private AudioSource audioSource; // Audio source to play sound
+    public AudioClip Sound_crash;  
+    public AudioClip flying;  
+    private AudioSource audioSource; 
     private AudioSource fly_sound;
     public GameObject explosion;
 
@@ -84,8 +84,6 @@ public class ControlBird : MonoBehaviour
         // Play the sound when a collision happens
         audioSource.Play();
 
-    // Detect collision and handle game over logic
-        //_rigidbody_mid.transform.position = new Vector3(0, 0, -2.4f);
  
 
         // Instantiate the explosion at the bird's position
